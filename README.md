@@ -1,30 +1,60 @@
-Steps for model training :
-1. Download the dataset.
-2. Convert labels from json to labels.txt (yolo format)
-3. train the yolo model
-4. generate inference
-5. calculate metrics
+Download the dataset
 
-All the required libraries can be installed with requirement.txt
-pip install -r requirements.txt
+Convert labels from JSON to YOLO format (labels.txt)
 
-For Data Analysis :
-use the DataAnalysis.ipynb 
-You need to change the path to json files. 
-
-For label conversion , change the paths of json file and output label directory at line 190
 python jsonToTxtLabelConversion.py
 
-For training model, modify line 22 of train.py
-data_yaml = (
-        "/nfs/ECAC_Data/Somya_data/BDD_Data/bdd100k_images_100k/"
-        "bdd100k/images/100k/bdd100k_final.yaml"
-    ) // replace with your paths
-run : 
+
+-> Edit line 190 in jsonToTxtLabelConversion.py to set paths for the JSON file and output label directory.
+
+Train the YOLO model
+
 python train.py
 
-For generating results change the paths and run
+
+-> Modify line 22 in train.py to update your dataset path:
+
+data_yaml = (
+    "/path/to/your/data.yaml"
+)
+
+
+Run inference with the trained model
+
 python inference.py
 
-For computing accuracy :
+
+-> Update input/output paths in the script before running.
+
+Calculate metrics
+
 python calculate_metrics.py
+
+📊 Data Analysis
+
+For dataset exploration and analysis:
+
+jupyter notebook DataAnalysis.ipynb
+
+
+-> Update the path to JSON files inside the notebook before running.
+
+📦 Requirements
+
+Install all dependencies with:
+
+pip install -r requirements.txt
+
+📂 Project Structure
+├── DataAnalysis.ipynb          # Notebook for dataset analysis
+├── jsonToTxtLabelConversion.py # JSON → YOLO label conversion
+├── train.py                    # Model training script
+├── inference.py                # Run inference on test data
+├── calculate_metrics.py        # Compute accuracy & metrics
+├── requirements.txt            # Dependencies
+└── README.md                   # Project documentation
+
+📸 Sample Results
+![det_ca057c8b-e42f0882](https://github.com/user-attachments/assets/3e22e894-23d4-42a8-9fc0-a308a67e66dd)
+
+![det_ca2d1df6-76d59c0c](https://github.com/user-attachments/assets/b6c53b6f-e913-4955-9eb1-1ee54b7eed2a)

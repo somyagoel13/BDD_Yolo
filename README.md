@@ -3,23 +3,36 @@
 
 ## Index
 * [Dataset](#dset)
+* [Requirements](#req)
+* [Docker](#doc)
 * [Labeling](#label)
 * [Training](#train)
 * [Inference](#infer)
 * [Evaluation](#eval)
 * [Data Analysis](#analyse)
-* [Requirements](#req)
 * [Project Structure](#pstruct)
 * [Sample Results](#res)
 * [Overview](https://github.com/somyagoel13/BDD_Yolo/blob/master/BDD_ObjectDetection.pdf)
 
 
-## <a name="dset"></a> Dataset
+## <a name="dset"></a> 📂 Dataset
 
 Download the dataset using [this](http://bdd-data.berkeley.edu/) link.
 
 
-## <a name="label"></a> Labeling
+## <a name="req"></a> ⚙️ Requirements
+
+Install all dependencies with:
+
+```pip install -r requirements.txt```
+
+
+## <a name="doc"></a> 🐳 Docker
+
+```docker build -t myproject:latest .```
+
+
+## <a name="label"></a> ✏️ Labeling
 
 Convert labels from JSON to YOLO format (labels.txt)<br/>
 
@@ -27,7 +40,7 @@ Convert labels from JSON to YOLO format (labels.txt)<br/>
 > <b>Note: Edit line 190 in jsonToTxtLabelConversion.py to set paths for the JSON file and output label directory.</b>
 
 
-## <a name="train"></a> Training
+## <a name="train"></a> 🦾 Training
 
 Train the YOLO model<br/>
 
@@ -40,7 +53,7 @@ data_yaml = (
 ```
 
 
-## <a name="infer"></a> Inference
+## <a name="infer"></a> 📄 Inference
 
 Run inference with the trained model<br/>
 
@@ -48,7 +61,7 @@ Run inference with the trained model<br/>
 ><b>Note: Update input/output paths in the script before running.</b>
 
 
-## <a name="eval"></a> Evaluation
+## <a name="eval"></a> 📈 Evaluation
 
 Calculate metrics<br/>
 
@@ -63,12 +76,6 @@ For dataset exploration and analysis:
 
 ><b>Note: Update the path to JSON files inside the notebook before running.</b>
 
-
-## <a name="req"></a> 📦 Requirements
-
-Install all dependencies with:
-
-```pip install -r requirements.txt```
 
 ## <a name="pstruct"></a> 📂 Project Structure
 ├── DataAnalysis.ipynb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Notebook for dataset analysis<br/>

@@ -1,15 +1,15 @@
-Download the dataset
+1.Download the dataset
 
-Convert labels from JSON to YOLO format (labels.txt)
+2.Convert labels from JSON to YOLO format (labels.txt)
 
-python jsonToTxtLabelConversion.py
+```python jsonToTxtLabelConversion.py```
 
 
 -> Edit line 190 in jsonToTxtLabelConversion.py to set paths for the JSON file and output label directory.
 
-Train the YOLO model
+3.Train the YOLO model
 
-python train.py
+```python train.py```
 
 
 -> Modify line 22 in train.py to update your dataset path:
@@ -19,16 +19,17 @@ data_yaml = (
 )
 
 
-Run inference with the trained model
+4.Run inference with the trained model
 
-python inference.py
+```python inference.py```
 
 
 -> Update input/output paths in the script before running.
 
-Calculate metrics
+5.Calculate metrics
 
-python calculate_metrics.py
+```python calculate_metrics.py```
+
 
 📊 Data Analysis
 
@@ -43,7 +44,7 @@ jupyter notebook DataAnalysis.ipynb
 
 Install all dependencies with:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 📂 Project Structure
 ├── DataAnalysis.ipynb          # Notebook for dataset analysis

@@ -31,37 +31,6 @@ def train_yolov8_small_gpu():
     # Device configuration
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
-    # Class distribution (example: BDD dataset)
-    class_counts = Counter(
-        {
-            7: 713211,
-            2: 239686,
-            1: 186117,
-            3: 91349,
-            5: 29971,
-            0: 11672,
-            4: 7210,
-            9: 4517,
-            6: 3002,
-            8: 136,
-        }
-    )
-
-    # Precomputed class weights for imbalance handling
-    class_weights = torch.tensor(
-        [
-            1.0465e-02,
-            6.5627e-04,
-            5.0960e-04,
-            1.3371e-03,
-            1.6941e-02,
-            4.0754e-03,
-            4.0687e-02,
-            1.7126e-04,
-            8.9812e-01,
-            2.7041e-02,
-        ]
-    )
 
     # Print dataset info
     print("Class counts:", class_counts)

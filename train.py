@@ -32,9 +32,6 @@ def train_yolov8_small_gpu():
     device = "cuda" if torch.cuda.is_available() else "cpu"
 
 
-    # Print dataset info
-    print("Class counts:", class_counts)
-    print("Class weights:", class_weights)
     print(f"Using batch size {batch_size}")
     print(f"Training for {epochs} epochs to compensate for small batch size")
 
